@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Từ điển</h3>
+Tiếng anh:<input type="text" id="tienganh">
+Tiếng việt:<input type="text" id="tiengviet">
+<button type="button" onclick="chuyendoi()">Chuyển đổi</button>
+</body>
+<script>
+    function chuyendoi() {
+        let a = ['one', 'two', 'three', 'four', 'five'];
+        let b = ['một', 'hai', 'ba', 'bốn', 'năm'];
+        let x = document.getElementById("tienganh").value;
+        let index = -1;
+        for (i = 0; i < a.length; i++) {
+            if (a[i] === x) {
+                index = i;
+                break;
+            }
+        }
+        if (index !== -1) {
+            x = b[index];
+        } else {
+            x = "Không tìm thấy";
+        }
+        document.getElementById('tiengviet').value = x
+    }
+</script>
+</html>
